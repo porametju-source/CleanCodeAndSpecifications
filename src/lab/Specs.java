@@ -9,12 +9,19 @@ package lab;
  *
  *  ต้องมีอย่างน้อย:
  *    - บรรทัดสรุปว่าเมธอด "ทำอะไร" (what, ไม่ใช่ how)
- *    - @param   ของทุกพารามิเตอร์ พร้อมข้อจำกัด (pre-condition)
+ *    - @param   ของทุกพารามิเตอร์ พร้อมข้อจำกัด (pre-condition) 
  *    - @return  อธิบายค่าที่คืน (post-condition)
  *    - @throws  ทุก exception ที่โยน พร้อมเงื่อนไข
  * ==========================================================================
  */
 public class Specs {
+    /**
+     * หาตำแหน่งแรกให้เจอ
+     * @param arr array ที่ใช้ในการค้นหา
+     * @param key ค่าที่ต้องการค้นหา
+     * @return  ตแหน่งที่เจอ  ถ้าหาไม่เจอส่งค่าเป็น-1
+     * @throws  IllegalArgumentException เมื่อ array เป็น null
+     */
 
     // TODO ข้อ 4: เขียน JavaDoc ให้เมธอดนี้
     public static int firstIndexOf(int[] arr, int key) {
@@ -26,9 +33,10 @@ public class Specs {
 
     // TODO ข้อ 5: เขียน JavaDoc ให้เมธอดนี้
     /**
-     * 
-     * @param radius
-     * @return
+     * คำนวนรัศมีวงกลม
+     * @param radius >= 0
+     * @returnmath math.PT *radius *radius 
+     * @throws IllegalArgumentExceptionถ้า radius >=n 0
      */
     public static double circleArea(double radius) {
         if (radius < 0) throw new IllegalArgumentException("radius must be >= 0");
@@ -36,8 +44,12 @@ public class Specs {
     }
 
     // TODO ข้อ 6: เขียน JavaDoc ให้เมธอดนี้
+    /** 
     //   (เมธอดนี้ตัดช่องว่างหน้า-หลัง แล้วแปลงเป็นตัวพิมพ์เล็ก;
     //    input null ให้คืน string ว่าง)
+    *@param s ตัวอักษร
+    *@return s.trim().toLowerCase();
+    */
     public static String normalize(String s) {
         if (s == null) return "";
         return s.trim().toLowerCase();
